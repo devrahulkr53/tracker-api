@@ -9,7 +9,7 @@ const checkAuth = require('../middleware/auth');
 const Users = require('../model/users'); 
 
 
-router.get('/', checkAdmin, async (req,res)=>{
+router.get('/', async (req,res)=>{
     try {
         let result = await Users.aggregate([
             { $project: { _id: 1, name: 1, email: 1, latitude: 1, longitude: 1 } }

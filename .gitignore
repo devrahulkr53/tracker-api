@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/social-frontend/node_modules
 /.pnp
 .pnp.js
 

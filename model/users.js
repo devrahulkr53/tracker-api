@@ -10,9 +10,8 @@ const userSchema = mongoose.Schema({
         match:/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     },
     password:{type:String,required:true},
-    avatar:{type:String},
-    followers: [ {type:[mongoose.Schema.Types.ObjectId], ref: 'Users'} ],
-    following: [ {type:[mongoose.Schema.Types.ObjectId], ref: 'Users'} ]
+    latitude:{type:Number},
+    longitude:{type:Number},
 })
 
 module.exports = mongoose.model('Users',userSchema);

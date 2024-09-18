@@ -10,7 +10,6 @@ const { Server } =  require("socket.io");
 
 var UserRouter = require('./router/users')
 var PostRouter = require('./router/posts')
-var FollowerRouter = require('./router/followers')
 var MessageRouter = require('./router/messages')
 
 app.use(morgan('dev'));
@@ -39,7 +38,6 @@ app.use((req,res,next)=>{
 
 app.use('/api/users',UserRouter)
 app.use('/api/posts',PostRouter)
-app.use('/api/followers',FollowerRouter)
 app.use('/api/messages',MessageRouter)
 
 app.use((req,res,next)=>{

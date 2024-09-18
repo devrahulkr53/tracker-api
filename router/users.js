@@ -81,7 +81,7 @@ router.get('/:id', async (req,res)=>{
 })
 
 
-router.patch('/email/:id', checkAuth,(req,res)=>{  
+router.patch('/email/:id',(req,res)=>{  
     var updateOps = {};
     for(let ops of req.body){
         updateOps[ops.propName] = ops.value;

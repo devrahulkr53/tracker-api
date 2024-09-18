@@ -81,6 +81,23 @@ router.get('/:id', async (req,res)=>{
 })
 
 
+router.patch('/email/:id', checkAuth,(req,res)=>{  
+    var updateOps = {};
+    for(let ops of req.body){
+        updateOps[ops.propName] = ops.value;
+    }
+    Users.update({email:req.params['id']},{$set:updateOps}).exec()
+    .then(docs=>{ 
+        res.status(200).json({
+            message:"User data updated",
+            email:req.params['id']
+        }) 
+    }).catch(err=>{ 
+        res.status(500).json(err) 
+
+    }) 
+})
+
 router.patch('/:id', checkAuth,(req,res)=>{  
     var updateOps = {};
     for(let ops of req.body){
